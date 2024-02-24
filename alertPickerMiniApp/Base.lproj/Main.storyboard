@@ -1,24 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NGj-DN-9Us">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Wine Picker-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="alertPickerMiniApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mv-7p-hdh">
+                                <rect key="frame" x="159" y="610" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LiY-jr-3Dp"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RpB-eK-X83">
+                                <rect key="frame" x="201" y="217" width="193" height="162"/>
+                            </pickerView>
+                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pCo-fL-eLQ">
+                                <rect key="frame" x="0.0" y="217" width="193" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="UVu-wH-fqQ"/>
+                                    <constraint firstAttribute="width" constant="193" id="W12-pO-PZZ"/>
+                                </constraints>
+                            </pickerView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pCo-fL-eLQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="158" id="2Jg-Vl-iRG"/>
+                            <constraint firstItem="pCo-fL-eLQ" firstAttribute="top" secondItem="RpB-eK-X83" secondAttribute="top" id="Bxc-ju-AVC"/>
+                            <constraint firstItem="pCo-fL-eLQ" firstAttribute="bottom" secondItem="RpB-eK-X83" secondAttribute="bottom" id="KjN-D6-63i"/>
+                            <constraint firstItem="0mv-7p-hdh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WvQ-hT-s4z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0mv-7p-hdh" secondAttribute="bottom" constant="124" id="aHs-G3-AEG"/>
+                            <constraint firstItem="RpB-eK-X83" firstAttribute="leading" secondItem="pCo-fL-eLQ" secondAttribute="trailing" constant="8" id="azI-oM-zxD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RpB-eK-X83" secondAttribute="trailing" constant="-17" id="g9v-sh-KD8"/>
+                            <constraint firstItem="pCo-fL-eLQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yUd-zf-JLr"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Wine Picker" image="wineglass" catalog="system" id="M9o-Go-BOC"/>
+                    <connections>
+                        <outlet property="myPicker" destination="pCo-fL-eLQ" id="1nV-qk-fTd"/>
+                        <outlet property="otherPicker" destination="RpB-eK-X83" id="jpg-ry-Pcs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1063.3587786259541" y="3.5211267605633805"/>
+        </scene>
+        <!--Beer Picker-->
+        <scene sceneID="duZ-xS-BXC">
+            <objects>
+                <viewController id="Qi9-0h-MxU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fdT-82-tpL">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="a44-Xs-kV8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Beer Picker" image="waterbottle" catalog="system" id="REM-cF-ASj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HEL-RR-WcT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1063" y="704"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="grd-2C-Xd2">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="NGj-DN-9Us" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G8S-6S-a4I">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="bWP-qP-tfn"/>
+                        <segue destination="Qi9-0h-MxU" kind="relationship" relationship="viewControllers" id="UKs-bS-XFt"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="awJ-gb-OhX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.64122137404578" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="waterbottle" catalog="system" width="79" height="128"/>
+        <image name="wineglass" catalog="system" width="95" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
